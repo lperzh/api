@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active:
+      "dev"
+  mandatory-file-encoding: UTF-8
+
+
+
+path:
+  #storage: /opt/DONDE/CARGAS/
+  storage: /Users/vampiro/AML/DONDE/CARGAS/
+  #bath: /opt/DONDE
+  bath: /Users/vampiro/workspace-aml/batch_process_pld/
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url:
+      jdbc:sqlserver://10.30.5.40:1434;instanceName=MSSQLS08;databaseName=DONDE_PROD
+    username:
+      DONDE_APP
+    password:
+      D0ND3_4PP
+
+---
+spring:
+  profiles: uat
+  datasource:
+    url:
+      jdbc:sqlserver://192.168.80.14:1433;instanceName=MSSQLS08;databaseName=BROXEL_UAT
+    username:
+      BROXEL_APP
+    password:
+      BR0X3L_4PP
+
+---
+spring:
+  profiles: prod
+  datasource:
+    url:
+      jdbc:sqlserver://192.168.80.217:1433;instanceName=MSSQLS08;databaseName=BROXELAMLMELTSAN
+    username:
+      USRAMLMELTSAN
+    password:
+      USR4MLM3LT54N
